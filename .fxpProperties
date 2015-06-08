@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fxpProperties abbreviated="false" authoringTool="Flex Builder" compiles="true" parentProject="f095751f-6b3c-42f3-96d3-125b9463790c" projectUUID="f095751f-6b3c-42f3-96d3-125b9463790c" pureCatalystProject="false" sdkVersion="4.6.0" uuid="cc5c214f-5b75-4c34-8101-44c561475ac0" version="15">
+  <projects/>
+  <src/>
+  <swc>
+    <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="cc5c214f-5b75-4c34-8101-44c561475ac0"/>
+    <linked location="C:/Users/Юрец/Desktop/flash/pureMVCTest/libs/PureMVC_AS3_2_0_4.swc" path="/linked-swc/PureMVC_AS3_2_0_4.swc" position="1" uuid="cc5c214f-5b75-4c34-8101-44c561475ac0"/>
+    <linked location="C:/Users/Юрец/Downloads/GreenSock-AS3/GreenSock-AS3" path="/linked-swc/GreenSock-AS3" position="2" uuid="cc5c214f-5b75-4c34-8101-44c561475ac0"/>
+    <linked location="C:/Users/Юрец/Desktop/Flash versions/MyLibs/bulk_loader.swc" path="/linked-swc/bulk_loader.swc" position="3" uuid="cc5c214f-5b75-4c34-8101-44c561475ac0"/>
+  </swc>
+  <misc/>
+  <theme/>
+  <mxmlFormattingPrefs groupAttributesByState="true" maxLineWidth="100" mxmlAlignAttributes="true" mxmlAttributeOrder="id,userLabel,includeIn,excludeFrom,visible,x,y,z,left,right,top,bottom,width,height,minWidth,minHeight,maxWidth,maxHeight,label" mxmlKeepAttributeValuesOrganized="true"/>
+</fxpProperties>

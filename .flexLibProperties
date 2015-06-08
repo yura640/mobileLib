@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="controller.comands.AddEnemieToCellComand"/>
+    <classEntry path="model.dto.FlashVarsDto"/>
+    <classEntry path="controller.comands.LoadMainContentCommand"/>
+    <classEntry path="model.proxy.GamesConfigProxy"/>
+    <classEntry path="model.proxy.FlashVarsProxy"/>
+    <classEntry path="model.proxy.FlashVariantsProxy"/>
+    <classEntry path="model.dto.GamesConfigDO"/>
+    <classEntry path="controller.comands.SelectLevelCommand"/>
+    <classEntry path="controller.comands.LoadLevelCommand"/>
+    <classEntry path="model.proxy.LevelProxy"/>
+    <classEntry path="model.dto.LevelDto"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
