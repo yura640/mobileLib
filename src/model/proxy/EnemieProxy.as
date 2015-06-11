@@ -36,7 +36,6 @@ package model.proxy
 				var oneDto:EnemieDto = arrayOfEnemy[i];
 				if (oneDto.cellID == enemieDto.cellID) {
 					sendNotification(GeneralNotification.GENERATE_ENEMI_AND_CELL);
-					trace("ошибка");
 					return;
 				}
 			}

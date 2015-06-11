@@ -24,8 +24,9 @@ package view.mediator
 			//sendNotification(GeneralNotification.ADD_NAME_COMMAND, e.data);
 		}
 		public function btnClicked(event:EventTrans):void{
-			sendNotification(GeneralNotification.START_THE_GAME, event.data);
 			sendNotification("SLC", 1);
+			sendNotification(GeneralNotification.START_THE_GAME, event.data);
+		
 		}
 		public function onClickOnHighScoreBtn (e:Event):void
 		{

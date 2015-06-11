@@ -34,12 +34,11 @@ package model.proxy
 			return getData() as GameDTO;
 		}
 		
-		public function startGame():void
+		public function startGame(miliSeconds:int):void
 		{
-			timer = new Timer(700);
+			timer = new Timer(miliSeconds);
 			timer.addEventListener(TimerEvent.TIMER, onTimer);
 			timer.start();
-			startGameTimer(15);
 		}
 		public function timerStop():void
 		{
@@ -75,17 +74,17 @@ package model.proxy
 				startGameTimer(gameTimer.repeatCount);
 			}
 		
-		public function removeEnemie():void
-		{
-			removeEnemietimer = new Timer(800,1);
-			removeEnemietimer.addEventListener(TimerEvent.TIMER, timerDown);
-			removeEnemietimer.start(); 
-		}
-		
-		public function timerDown(event:TimerEvent):void
-		{
-			sendNotification(GeneralNotification.REMOVE_ENEMIE_BY_TIMER);
-		}
+//		public function removeEnemie():void
+//		{
+//			removeEnemietimer = new Timer(800,1);
+//			removeEnemietimer.addEventListener(TimerEvent.TIMER, timerDown);
+//			removeEnemietimer.start(); 
+//		}
+//		
+//		public function timerDown(event:TimerEvent):void
+//		{
+//			sendNotification(GeneralNotification.REMOVE_ENEMIE_BY_TIMER);
+//		}
 		
 		public function timerReset():void{
 			removeEnemietimer.reset();

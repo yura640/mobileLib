@@ -12,7 +12,7 @@ package controller.comands
 		
 		override public function execute(notification:INotification):void{
 		
-			(facade.retrieveProxy(GameProxy.NAME) as GameProxy).removeEnemie();
+			//(facade.retrieveProxy(GameProxy.NAME) as GameProxy).removeEnemie();
 	
 		}
 	}

@@ -12,6 +12,8 @@
     <classEntry path="controller.comands.LoadLevelCommand"/>
     <classEntry path="model.proxy.LevelProxy"/>
     <classEntry path="model.dto.LevelDto"/>
+    <classEntry path="view.mediator.NextLevelMediator"/>
+    <classEntry path="view.components.NextLevelViewLogic"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

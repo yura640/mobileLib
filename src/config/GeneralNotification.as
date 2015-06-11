@@ -53,7 +53,7 @@ package config
 		public static const LOAD_MAIN_RESOURSES:String = "loadMainResourses";
 		public static const MAIN_CONTENT_LOADED:String = "mainContentLoaded";
 		public static const LOAD_CURENT_LEVEL:String = "loadCurentLevel";
-		
+		public static const LOAD_NEXT_LEVEL:String = "loadNextLevel";
 		
 		//public static const 
 	}

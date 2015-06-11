@@ -26,7 +26,7 @@ package view.components
 		
 		public function LobbyViewLogic()
 		{
-			super(WareHouse.getInstance().getAsset('menu_BG') as MovieClip);
+			super(WareHouse.getInstance().getAsset("menu_BG") as MovieClip);
 			initBtns();
 		}
 		
