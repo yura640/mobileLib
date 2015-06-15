@@ -18,21 +18,20 @@ package controller.comands
 	
 	public class LoadGameComand extends SimpleCommand
 	{
-		override public function execute(notification:INotification):void{
-			var loader:Loader = new Loader();
-			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoad);
-			var zapros:URLRequest = new URLRequest("res/Crot.swf");
-			loader.load(zapros);
-		}
-		
-		protected function onLoad(event:Event):void
-		{
-			var loaderInfo:LoaderInfo = event.target as LoaderInfo; 
-			loaderInfo.removeEventListener(Event.COMPLETE, onLoad)
-			WareHouse.getInstance().setData(loaderInfo);
-			var flashVarsDto:FlashVarsDto=new FlashVarsDto(); // pyti загрузки
-			facade.registerProxy(new FlashVariantsProxy(flashVarsDto));
+//		override public function execute(notification:INotification):void{
+//			var loader:Loader = new Loader();
+//			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoad);
+//			var zapros:URLRequest = new URLRequest("res/Crot.swf");
+//			loader.load(zapros);
+//		}
+//		
+//		protected function onLoad(event:Event):void
+//		{
+//			var loaderInfo:LoaderInfo = event.target as LoaderInfo; 
+//			loaderInfo.removeEventListener(Event.COMPLETE, onLoad)
+//			WareHouse.getInstance().setData(loaderInfo);
+//			
 			
 		}
 	}
-}
+//}

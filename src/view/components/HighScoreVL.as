@@ -5,6 +5,7 @@ package view.components
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.sampler.getInvocationCount;
@@ -16,9 +17,10 @@ package view.components
 	
 	public class HighScoreVL extends ViewLogic
 	{
+		public var returnBtn:SimpleButton;
 		public function HighScoreVL()
 		{
-			super(WareHouse.getInstance().getAsset('scoreBord_1') as MovieClip);
+			super(WareHouse.getInstance().getAsset("scoreBord_1") as MovieClip);
 			initBtns();
 		}
 		public function addResultsOnScoreBord(scoreDto:Array):void
@@ -34,8 +36,11 @@ package view.components
 			}
 		public function initBtns():void
 		{
-			var returnBtn:SimpleButton = content["returnBtn"] as SimpleButton;
+			returnBtn = highScoreContent["returnBtn"] as SimpleButton;
 			returnBtn.addEventListener(MouseEvent.CLICK, onClickOnReturnBtn);
+		}
+		private function get highScoreContent():Sprite{
+			return content as Sprite;
 		}
 		public function onClickOnReturnBtn(e:MouseEvent):void
 		{

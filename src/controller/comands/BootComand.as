@@ -41,6 +41,7 @@ package controller.comands
 			facade.registerCommand(GeneralNotification.LOAD_MAIN_RESOURSES , LoadMainContentCommand);
 			facade.registerCommand("SLC", SelectLevelCommand);
 			facade.registerCommand(GeneralNotification.LOAD_GAME, LoadGameComand);
+			facade.registerCommand(GeneralNotification.LOAD_NEXT_LEVEL_COMMAND, NextLevelCommand);
 			facade.registerCommand(GeneralNotification.GAME_IS_LOADED, StartLobbyComand);
 			facade.registerCommand(GeneralNotification.LOAD_CURENT_LEVEL, LoadLevelCommand);
 			facade.registerCommand(GeneralNotification.ON_CLICK_ON_HIGH_SCORE_BTN, OpenHighScoreCommand);
@@ -65,7 +66,9 @@ package controller.comands
 			facade.registerProxy(new GameProxy());
 			facade.registerProxy(new BonusProxy());
 			facade.registerProxy( new EnemieProxy());
-			sendNotification(GeneralNotification.LOAD_GAME);
+			//sendNotification(GeneralNotification.LOAD_GAME);
+			
+			facade.registerProxy(new FlashVariantsProxy(flashVarsDto));
 		}
 	}
 }

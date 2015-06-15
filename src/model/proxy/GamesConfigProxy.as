@@ -50,7 +50,7 @@ package model.proxy
 				_gamesConfigDO_array.push(gameConfigDO); // в итоге у нас есть масив ДТОшек
 			}
 				
-				sendNotification(GeneralNotification.GAME_IS_LOADED);
+				
 			
 			
 			//retursn _gamesConfigDO_array;

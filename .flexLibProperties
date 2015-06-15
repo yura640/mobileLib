@@ -14,6 +14,7 @@
     <classEntry path="model.dto.LevelDto"/>
     <classEntry path="view.mediator.NextLevelMediator"/>
     <classEntry path="view.components.NextLevelViewLogic"/>
+    <classEntry path="controller.comands.NextLevelCommand"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

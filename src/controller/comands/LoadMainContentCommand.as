@@ -4,6 +4,8 @@ package controller.comands
 	
 	import config.GeneralNotification;
 	
+	import flash.display.LoaderInfo;
+	import flash.display.MovieClip;
 	import flash.events.Event;
 	import flash.text.TextField;
 	
@@ -27,7 +29,7 @@ package controller.comands
 			_gamesXmlLoader = new BulkLoader;
 			_assetsPath=notification.getBody() as String;
 			var _mainConfigPath:String=notification.getType();
-			_loader.add(_mainConfigPath, {id:"mainConfig"}); // шо за другий параметр?
+			_loader.add(_mainConfigPath, {id:"mainConfig"}); // _mainConfigPath - путь загрузки, {id:"mainConfig"} - идентификатор
 			
 			_loader.addEventListener(BulkLoader.COMPLETE, onMainConfigLoaded);
 			_loader.addEventListener(BulkLoader.ERROR, onError);
@@ -36,36 +38,38 @@ package controller.comands
 		}
 		public function onMainConfigLoaded(event:Event):void{
 			_loader.removeEventListener(BulkLoader.COMPLETE, onMainConfigLoaded);
-			_mainConfigXML=_loader.getContent("mainConfig") as XML;
-			for (var i:int=0; i<_mainConfigXML.conf.length(); i++){ 
-				var asset_type:String=_mainConfigXML.conf[i].@TYPE;
-				var asset_title:String=_mainConfigXML.conf[i].@TITLE;
-				_loader.add(_assetsPath+_mainConfigXML.conf[i].@URL, {id:asset_title}); 
+			_mainConfigXML=_loader.getContent("mainConfig") as XML; // содержимое id:"mainConfig" присваеваем _mainConfigXML
+			for (var i:int=0; i<_mainConfigXML.conf.length(); i++){ // проходя по каждому полю _mainConfigXML...
+				var asset_type:String=_mainConfigXML.conf[i].@TYPE;// тип каждого поля приваеваем переменной asset_type
+				var asset_title:String=_mainConfigXML.conf[i].@TITLE;// тайтл каждого поля присваеваем переменной asset_title
+				_loader.add(_assetsPath+_mainConfigXML.conf[i].@URL, {id:asset_title}); // загр res/URL каждого поля и метка asset_title = TITLE
+			
 			}
 			_loader.addEventListener(BulkLoader.COMPLETE, onLoaderParseComplete);
 			_loader.addEventListener(BulkLoader.ERROR, onError);
 		}
 		public function onLoaderParseComplete(event:Event):void{
 			_loader.removeEventListener(BulkLoader.COMPLETE, onLoaderParseComplete);
-			for (var i:int=0; i<_mainConfigXML.conf.length();i++){
-				var asset_type:String=_mainConfigXML.conf[i].@TYPE;
-				var asset_title:String=_mainConfigXML.conf[i].@TITLE;
-				switch (asset_type){
-					case "MovieClip":
-						WareHouse.getInstance().getAsset(asset_title);
+			for (var i:int=0; i<_mainConfigXML.conf.length();i++){ // проходя по каждому элементу _mainConfigXML...
+				var asset_type:String=_mainConfigXML.conf[i].@TYPE;// тип каждого поля приваеваем переменной asset_type
+				var asset_title:String=_mainConfigXML.conf[i].@TITLE; // тайтл каждого поля присваеваем переменной asset_title
+				switch (asset_type){ // проверяем тайп
+					case "SWF":
+						WareHouse.getInstance().setData(_loader.getContent(asset_title));// если мувик то ложим в варехауз
 						break;
 					case "Sounds":
-						WareHouse.getInstance().getAsset(asset_title);
+						WareHouse.getInstance().setData(_loader.getContent(asset_title));// если саунд то ложем в варехауз
 						break;
 					case "XML":
-						facade.registerProxy(new GamesConfigProxy(_loader.getContent(asset_title)));
+						facade.registerProxy(new GamesConfigProxy(_loader.getContent(asset_title))); // если Хмл - создаемпрокси и на вход содержимое
 						
 						break;
 				}
 			}
 			sendNotification(GeneralNotification.MAIN_CONTENT_LOADED);
-			
+			sendNotification(GeneralNotification.GAME_IS_LOADED);
 		}
+		
 		public function onError(event:Event):void{
 			_loader.removeEventListener(BulkLoader.ERROR, onError);
 			var text_field:TextField=new TextField;
